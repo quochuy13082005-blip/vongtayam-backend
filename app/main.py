@@ -1,3 +1,8 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))  # đảm bảo import từ backend
+import pydantic_patch_pro
+
 from fastapi import FastAPI, Depends, HTTPException, WebSocket, WebSocketDisconnect
 from . import models, schemas, database, crud, auth
 from sqlalchemy.orm import Session
